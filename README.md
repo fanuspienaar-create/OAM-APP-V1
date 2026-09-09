@@ -1,18 +1,11 @@
 # OAM Studio — One Stop Artist Marketing Studio
 
-This build corrects the visual branding so the deployed GitHub Pages site uses the approved OAM Studio logo and app icon instead of missing-image placeholders.
+## IMPORTANT — GitHub Pages upload
+Upload the **contents of this folder into the ROOT of your repository**. Your repository must show `index.html`, `manifest.webmanifest`, `sw.js`, `.nojekyll`, and the `assets` folder at the same level. Do not put them inside a second `OAM_Studio` folder.
 
-## Visual fixes
-- Added real `assets/oam-logo.png` and `assets/oam-icon.png` files.
-- Added favicon and Apple touch icon.
-- Added OAM logo to the desktop sidebar like the approved mockup.
-- Mobile header uses the OAM logo.
-- Removed the large irritating circular hero outline.
-- Kept a restrained gold accent line instead.
-- Improved module cards and responsive mobile layout to follow the approved home-screen concept.
+This build fixes the previous fatal JavaScript syntax error that stopped the app buttons/navigation from working. The OAM logo has an embedded WebP fallback, so a bad GitHub asset path cannot leave a broken `?` image. The service worker is versioned and uses network-first updates so old cached builds are removed.
 
 ## GitHub Pages
-Upload the contents of this folder to your repository and enable GitHub Pages from the `main` branch. No paid hosting is required for the static app.
+Settings → Pages → Deploy from branch → `main` → `/ (root)` → Save.
 
-## Note
-This package fixes the UI/branding problem. Advanced local AI photo cutout and full FFmpeg/WebAssembly video rendering are separate engineering modules and should be integrated without replacing this approved visual shell.
+After replacing an older deployment, open the site once in a private/incognito tab or clear the installed site's data if an old service worker is still showing.
