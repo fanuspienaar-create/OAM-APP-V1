@@ -1,16 +1,16 @@
-# OAM Studio v6 — Responsive + PWA Fix
+# OAM Studio v7 — Responsive PWA / Branding Fix
 
-This build keeps the OAM Studio v5 functionality and fixes the responsive/PWA foundation:
-- iPhone portrait + landscape
-- Android portrait + landscape
-- PC/desktop and landscape tablet layouts
-- OAM logo uses PNG with an embedded fallback
-- OAM app icons include iOS 180px, Android 192px and 512px assets
-- manifest declares orientation: any
-- iOS PWA meta tags and Apple touch icons
-- service worker cache bumped to v6 to invalidate old cached assets
+This build fixes the OAM logo/PWA icon problem by:
+- embedding the primary OAM logo directly into the HTML so GitHub asset-path failures cannot remove it from the UI;
+- supplying dedicated 64/152/167/180/192/512/1024 PNG icons;
+- using explicit iOS Apple touch icons and Android/desktop PWA manifest icons;
+- keeping the responsive UI usable in portrait and landscape;
+- bumping the service-worker cache to v7.
 
 ## GitHub Pages
-Upload the contents of this folder to the repository root. Keep the `assets` folder beside `index.html`, `manifest.webmanifest`, and `sw.js`.
+Upload the CONTENTS of this folder to the repository root. Replace the old version completely.
 
-If an older installed PWA still shows the old UI, remove the old home-screen shortcut and add the GitHub Pages site again after the new deployment is live.
+After deployment on iPhone, delete the old OAM Studio Home Screen icon and add it again from Safari. iOS caches PWA icons aggressively, so reinstalling is necessary to see the new icon.
+
+## Important
+Use HTTPS GitHub Pages. The service worker requires HTTPS (except localhost).
