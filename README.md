@@ -1,11 +1,16 @@
-# OAM Studio — One Stop Artist Marketing Studio
+# OAM Studio v6 — Responsive + PWA Fix
 
-## IMPORTANT — GitHub Pages upload
-Upload the **contents of this folder into the ROOT of your repository**. Your repository must show `index.html`, `manifest.webmanifest`, `sw.js`, `.nojekyll`, and the `assets` folder at the same level. Do not put them inside a second `OAM_Studio` folder.
-
-This build fixes the previous fatal JavaScript syntax error that stopped the app buttons/navigation from working. The OAM logo has an embedded WebP fallback, so a bad GitHub asset path cannot leave a broken `?` image. The service worker is versioned and uses network-first updates so old cached builds are removed.
+This build keeps the OAM Studio v5 functionality and fixes the responsive/PWA foundation:
+- iPhone portrait + landscape
+- Android portrait + landscape
+- PC/desktop and landscape tablet layouts
+- OAM logo uses PNG with an embedded fallback
+- OAM app icons include iOS 180px, Android 192px and 512px assets
+- manifest declares orientation: any
+- iOS PWA meta tags and Apple touch icons
+- service worker cache bumped to v6 to invalidate old cached assets
 
 ## GitHub Pages
-Settings → Pages → Deploy from branch → `main` → `/ (root)` → Save.
+Upload the contents of this folder to the repository root. Keep the `assets` folder beside `index.html`, `manifest.webmanifest`, and `sw.js`.
 
-After replacing an older deployment, open the site once in a private/incognito tab or clear the installed site's data if an old service worker is still showing.
+If an older installed PWA still shows the old UI, remove the old home-screen shortcut and add the GitHub Pages site again after the new deployment is live.
